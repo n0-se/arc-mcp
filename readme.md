@@ -17,6 +17,12 @@ An execution state machine implemented as a Model Context Protocol (MCP) server 
 - **Robust Execution Tracking**: Built-in tools for cleanly advancing steps or reporting structured failure modes.
 - **Standard Protocol**: Built on the official `@modelcontextprotocol/sdk` using the `StdioServerTransport`.
 
+## 🧠 The Architect & Plan Generation
+
+This server executes strictly formatted YAML plans. To generate these plans reliably, you should use a highly capable reasoning model (acting as the **Architect**). 
+
+We provide a strict specification and instruction manual for the Architect AI. Simply provide the contents of [`docs/plan-format.spec.md`](docs/plan-format.spec.md) to your Architect agent (as a system prompt or context document) to ensure it correctly emits YAML plans that this Executor state machine can parse, execute, and mechanically verify.
+
 ## 🛠️ Provided MCP Tools
 
 This server exposes the following tools to the connected MCP client:
@@ -52,12 +58,11 @@ This server exposes the following tools to the connected MCP client:
 2. Install the necessary dependencies:
    ```bash
    npm install
-
-```
+   ```
 
 ## ⚙️ Configuration (MCP Client integration)
 
-To integrate this server with your MCP client (e.g., Claude Desktop, custom MCP-enabled IDE), add the following to your MCP settings file.
+To integrate this server with your MCP client (e.g., Claude Desktop, custom MCP-enabled IDE), add the following to your MCP settings file. 
 
 **Note**: Be sure to replace `YOUR_FULL_PATH_HERE` with the actual absolute directory path containing your `index.js` file:
 
@@ -73,10 +78,8 @@ To integrate this server with your MCP client (e.g., Claude Desktop, custom MCP-
     }
   }
 }
-
 ```
 
 ## 📜 Dependencies
-
-* [`@modelcontextprotocol/sdk`](https://www.npmjs.com/package/@modelcontextprotocol/sdk) (^1.29.0)
-* [`js-yaml`](https://www.npmjs.com/package/js-yaml) (^4.2.0)
+- [`@modelcontextprotocol/sdk`](https://www.npmjs.com/package/@modelcontextprotocol/sdk) (^1.29.0)
+- [`js-yaml`](https://www.npmjs.com/package/js-yaml) (^4.2.0)

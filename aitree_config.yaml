@@ -49,7 +49,8 @@ filepath_graylist: []
 filepath_whitelist: []
 
 # Explicitly ignore these specific files
-filepath_blacklist: []
+filepath_blacklist: 
+  - docs/project_scaffold.md
 
 # Only include files with these exact extensions
 extension_whitelist:
@@ -61,3 +62,4 @@ extension_whitelist:
   - ".ts"
   - ".css"
   - ".php"
+  - .md
