@@ -1,0 +1,63 @@
+# aitree Configuration File
+
+# Optional: The name of your project
+project_title: ""
+
+# Optional: A brief description of what the project is, its goals, or its stack.
+# This gives the AI crucial high-level context before it reads the code.
+project_info: ""
+
+# The root directory to start scanning from ("." is the current folder)
+initial_folder: "."
+
+# Automatically skip any file or folder starting with a dot (e.g., .git, .vscode)
+ignore_hidden_files: true
+
+# Generate an ASCII file tree at the top of the output document to help AI understand the project structure
+include_file_tree: true
+
+# The name of the final markdown file generated
+output_file: "./tmp/ai_tree.md"
+
+# Maximum number of omitted files to list in the output (0 to hide the list)
+omitted_files_limit: 50
+
+# In dry run mode, show this many of the largest included files at the bottom (0 to disable)
+top_big_files_limit: 10
+
+# Hide individual graylisted files in the dry run "Files to be processed" output to reduce clutter
+hide_graylisted_in_dry_run: true
+
+# List of folders to explicitly include (leave empty to include everything not blacklisted)
+folder_whitelist: []
+
+# List of folders to completely ignore
+folder_blacklist:
+  - "test"
+  - "vendor"
+  - "node_modules"
+
+# GRAYLIST: Files/Folders matching these will appear in the ASCII tree and Omitted list, 
+# but their source code will NOT be included in the output.
+folder_graylist: []
+filepath_graylist: []
+
+# Smart File Whitelist:
+# If you list files in a specific folder here (e.g., 'assets/css/style.css'),
+# ONLY those listed files will be included from that specific folder.
+# Other folders without whitelist rules are processed normally.
+filepath_whitelist: []
+
+# Explicitly ignore these specific files
+filepath_blacklist: []
+
+# Only include files with these exact extensions
+extension_whitelist:
+  - ".bat"
+  - ".py"
+  - ".json"
+  - ".yaml"
+  - ".js"
+  - ".ts"
+  - ".css"
+  - ".php"

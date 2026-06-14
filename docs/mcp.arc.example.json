@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "arc-mcp": {
+      "command": "node",
+      "args": [
+        "YOUR_FULL_PATH_HERE\\arc-mcp\\index.js"
+      ],
+      "env": {}
+    }
+  }
+}
